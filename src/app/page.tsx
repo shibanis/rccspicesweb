@@ -31,7 +31,8 @@ export default function Home() {
   };
 
   return (
-    <div className={`relative h-screen w-screen font-['Source_Sans_3']`}>
+    <div className="relative h-screen w-screen font-['Source_Sans_3']">
+      {/* Background Image */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -45,17 +46,13 @@ export default function Home() {
         />
       </motion.div>
 
+      {/* Main Content */}
       <motion.div 
-        className="absolute flex flex-col top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-        animate={{ 
-          opacity: activeModal ? 0 : 1,
-          y: activeModal ? 20 : 0 
-        }}
-        transition={{ 
-          duration: 0.5,
-          ease: "easeOut"
-        }}
+        className="absolute flex flex-col top-1/2 inset-x-0 mx-auto -translate-y-1/2 w-full max-w-[90%] sm:max-w-[60%] text-center"
+        animate={{ opacity: activeModal ? 0 : 1, y: activeModal ? 20 : 0 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
       >
+        {/* Logo & Divider */}
         <motion.div
           initial={{ y: 168 }}
           animate={{ y: 40 }}
@@ -65,20 +62,21 @@ export default function Home() {
             <Image
               src="/logonew.png"
               alt="logo"
-              width={120}
-              height={120}
-              className="border-1 rounded-full border-white"
+              width={80} 
+              height={80}
+              className="sm:w-32 sm:h-32 rounded-full border border-white"
             />
           </div>
-          <div className="w-[1px] h-20 bg-white mx-auto"></div>
+          <div className="w-[1px] h-16 sm:h-20 bg-white mx-auto"></div>
         </motion.div>
 
-        <div className="h-80 flex flex-col justify-center items-center">
+        {/* Title & Subtitle */}
+        <div className="h-64 flex flex-col justify-center items-center">
           <motion.div
             initial={{ y: 80 }}
-            animate={{ y: -48 }}
+            animate={{ y: -32 }}
             transition={{ duration: 0.2, delay: 0.5, ease: "easeOut" }}
-            className="w-200 h-[1px] bg-white mx-auto"
+            className="w-48 sm:w-80 h-[1px] bg-white mx-auto"
           />
           <motion.div
             initial={{ opacity: 0 }}
@@ -86,36 +84,37 @@ export default function Home() {
             transition={{ duration: 0.2, delay: 0.75 }}
             className="text-white my-4 text-center"
           >
-            <div className="text-center flex flex-col items-center font-sans">
-              <div className="text-5xl font-normal pb-8">
+            <div className="flex flex-col items-center font-sans">
+              <div className="text-3xl sm:text-5xl font-normal pb-4 sm:pb-8">
                 R.C.C. SPICES
               </div>
-              <div className="text-md font-light">
+              <div className="text-sm sm:text-md font-light px-4 sm:px-0">
                 THE GOLD STANDARD IN CARDAMOM - TRUSTED QUALITY, UNMATCHED PURITY.
               </div>
             </div>
           </motion.div>
           <motion.div
-            initial={{ y: -40 }}
-            animate={{ y: 80 }}
+            initial={{ y: -32 }}
+            animate={{ y: 64 }}
             transition={{ duration: 0.2, delay: 0.5, ease: "easeOut" }}
-            className="w-200 h-[1px] bg-white mx-auto"
+            className="w-48 sm:w-80 h-[1px] bg-white mx-auto"
           />
         </div>
 
+        {/* Navigation Buttons */}
         <motion.div
           initial={{ y: -128 }}
           animate={{ y: -8 }}
           transition={{ duration: 0.2, delay: 0.5, ease: "easeOut" }}
         >
-          <div className="w-[1px] h-20 bg-white mx-auto"></div>
-          <div className="flex justify-center">
+          <div className="w-[1px] h-16 sm:h-20 bg-white mx-auto"></div>
+          <div className="flex flex-wrap justify-center gap-2 sm:gap-4">
             {navButtons.map((button) => (
               <motion.button
                 key={button.id}
                 onClick={() => handleModalToggle(button.id)}
-                className="w-[190px] px-6 py-2 border border-white text-white 
-                hover:bg-white/30 hover:border-white/30 hover:text-white/80 transition-all duration-300"
+                className="w-[140px] sm:w-[190px] px-4 sm:px-6 py-2 border border-white text-white 
+                hover:bg-white/30 hover:border-white/30 hover:text-white/80 transition-all duration-300 text-sm sm:text-base"
                 whileHover={{ scaleY: 1.05 }}
                 whileTap={{ scaleY: 0.95 }}
               >
