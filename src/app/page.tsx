@@ -31,7 +31,7 @@ export default function Home() {
   };
 
   return (
-    <div className="relative h-screen w-screen font-['Source_Sans_3']">
+    <div className="relative h-screen w-screen font-['Source_Sans_3'] bg-black">
       {/* Background Image */}
       <motion.div
         initial={{ opacity: 0 }}
