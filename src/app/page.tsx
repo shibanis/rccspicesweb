@@ -48,14 +48,14 @@ export default function Home() {
 
       {/* Main Content */}
       <motion.div 
-        className="absolute flex flex-col top-1/2 inset-x-0 mx-auto -translate-y-1/2 w-full max-w-[90%] sm:max-w-[60%] text-center"
+        className="absolute flex flex-col top-1/2 inset-x-0 mx-auto -translate-y-1/2 w-full max-w-[90%] sm:max-w-[90%] text-center"
         animate={{ opacity: activeModal ? 0 : 1, y: activeModal ? 20 : 0 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
       >
         {/* Logo & Divider */}
         <motion.div
           initial={{ y: 168 }}
-          animate={{ y: 40 }}
+          animate={{ y: 30 }}
           transition={{ duration: 0.2, delay: 0.5, ease: "easeOut" }}
         >
           <div className="flex justify-center items-center w-full">
@@ -76,7 +76,7 @@ export default function Home() {
             initial={{ y: 80 }}
             animate={{ y: -32 }}
             transition={{ duration: 0.2, delay: 0.5, ease: "easeOut" }}
-            className="w-48 sm:w-80 h-[1px] bg-white mx-auto"
+            className="w-[180px] sm:w-[580px] h-[1px] bg-white "
           />
           <motion.div
             initial={{ opacity: 0 }}
@@ -97,18 +97,18 @@ export default function Home() {
             initial={{ y: -32 }}
             animate={{ y: 64 }}
             transition={{ duration: 0.2, delay: 0.5, ease: "easeOut" }}
-            className="w-48 sm:w-80 h-[1px] bg-white mx-auto"
+            className="w-[180px] sm:w-[580px] h-[1px] bg-white "
           />
         </div>
 
         {/* Navigation Buttons */}
         <motion.div
           initial={{ y: -128 }}
-          animate={{ y: -8 }}
+          animate={{ y: 2 }}
           transition={{ duration: 0.2, delay: 0.5, ease: "easeOut" }}
         >
           <div className="w-[1px] h-16 sm:h-20 bg-white mx-auto"></div>
-          <div className="flex flex-wrap justify-center gap-2 sm:gap-4">
+          <div className="flex flex-wrap justify-center">
             {navButtons.map((button) => (
               <motion.button
                 key={button.id}
