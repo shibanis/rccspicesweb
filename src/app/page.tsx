@@ -39,7 +39,7 @@ export default function Home() {
         transition={{ duration: 4, delay: 1.5 }}
       >
         <Image
-          src="/image.jpg"
+          src="/background.jpg"
           alt="background"
           className="object-cover"
           fill={true}
